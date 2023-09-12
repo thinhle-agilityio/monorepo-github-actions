@@ -8,6 +8,8 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
+import handlers from 'handlers';
+
 export interface Env {
 	// Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
 	// MY_KV_NAMESPACE: KVNamespace;
@@ -27,6 +29,9 @@ export interface Env {
 
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-		return new Response('Hello World!');
+		console.log('request', JSON.stringify(request));
+		console.log('env', JSON.stringify(env));
+		console.log('ctx', JSON.stringify(ctx));
+		return new Response(handlers());
 	},
 };

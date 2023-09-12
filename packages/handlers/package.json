@@ -1,0 +1,19 @@
+{
+  "name": "handlers",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Thinh Le <thinh.le@asnet.com.vn>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/handlers.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/handlers.test.js"
+  }
+}

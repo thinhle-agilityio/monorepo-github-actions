@@ -4,8 +4,15 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "start": "wrangler dev"
+  },
+  "dependencies": {
+    "cookie": "^0.5.0"
+  },
   "devDependencies": {
+    "@types/cookie": "^0.5.2",
     "lerna": "^7.2.0"
   }
 }
