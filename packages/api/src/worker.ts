@@ -32,7 +32,6 @@ export default {
 		console.log('request', JSON.stringify(request));
 		console.log('env', JSON.stringify(env));
 		console.log('ctx', JSON.stringify(ctx));
-		console.log('hello world');
 		return new Response(handlers());
 	},
 };
