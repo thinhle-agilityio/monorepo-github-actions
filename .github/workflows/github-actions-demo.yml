@@ -12,3 +12,5 @@ jobs:
       - run: npm install -g lerna
       - run: npm install
       - run: lerna run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
