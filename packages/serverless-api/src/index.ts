@@ -40,7 +40,7 @@ export default {
 		const cookie = parse(request.headers.get("Cookie") || "");
 		console.log('cookie', cookie);
 
-		const userId = 'test-user-6';
+		const userId = 'test-user-7';
 
 		return new Response(JSON.stringify({
 			url: request.url,
