@@ -22,6 +22,6 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-      - run: lerna run deploy --since=${{ github.event.pull_request.base.sha }}
+      - run: npx lerna run deploy --since=${{ github.event.pull_request.base.sha }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
