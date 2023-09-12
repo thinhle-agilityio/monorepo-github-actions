@@ -21,12 +21,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      # - run: npm install -g lerna
+      - run: git --version
       - run: npm install
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-      - run: npx lerna run deploy --since='${{ github.event.before }}'
+      - run: npx lerna run deploy --since=${{ github.event.before }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
