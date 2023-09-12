@@ -18,12 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
       - run: git --version
       - run: git log
-      - run: git fetch origin
       - run: git diff --name-only 0dda8008c1ed72c0a09e453f593b66cf8f217b62 -- packages/api
       - run: npm install
       - name: Dump GitHub context
