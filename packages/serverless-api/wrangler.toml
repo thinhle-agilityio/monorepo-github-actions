@@ -1,3 +1,18 @@
 name = "serverless-api"
 main = "src/index.ts"
 compatibility_date = "2023-09-08"
+
+
+vars = { API_HOST = "example.com" }
+
+kv_namespaces = [
+  { binding = "USERS", id = "15880d9949ac459d9d6217fe18e24375", preview_id = "429e48b1c0b24cb683a049f81f19ad98" },
+]
+
+[env.dev]
+
+vars = { API_HOST = "dev.example.com" }
+
+kv_namespaces = [
+  { binding = "USERS", id = "13e1b01fe3664fa3b1b1e848786ea4ee", preview_id = "6c06b0616d1948c2bde735413c40e6cf" },
+]

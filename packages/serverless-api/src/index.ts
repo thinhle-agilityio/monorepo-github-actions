@@ -12,7 +12,7 @@ import { parse } from "cookie";
 
 export interface Env {
 	// Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
-	// MY_KV_NAMESPACE: KVNamespace;
+	USERS: KVNamespace;
 	//
 	// Example binding to Durable Object. Learn more at https://developers.cloudflare.com/workers/runtime-apis/durable-objects/
 	// MY_DURABLE_OBJECT: DurableObjectNamespace;
@@ -41,6 +41,13 @@ export default {
 		console.log('cookie', cookie);
 
 		const userId = 'test-user-9';
+
+		await env.USERS.put('userId', userId, {
+			metadata: { someMetadataKey: "someMetadataValue" },
+		});
+
+		const getKVvalue = await env.USERS.get('userId');
+		console.log('getKVvalue', getKVvalue);
 
 		return new Response(JSON.stringify({
 			url: request.url,

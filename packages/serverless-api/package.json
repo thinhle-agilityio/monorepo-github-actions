@@ -9,8 +9,9 @@
   },
   "private": true,
   "scripts": {
-    "start": "wrangler dev",
+    "start": "wrangler dev -e dev",
     "deploy": "wrangler deploy",
+    "deploy-dev": "wrangler deploy -e dev",
     "test": "vitest"
   }
 }
