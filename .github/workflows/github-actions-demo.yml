@@ -1,12 +1,5 @@
-name: learn-github-actions
+name: Cloudflare Workers Monorepo Deployment
 run-name: ${{ github.actor }} is learning GitHub Actions
-
-# on:
-#   # When Pull Request is merged
-#   pull_request:
-#     branches:
-#       - main
-#     types: [closed]
 
 on:
   push:
@@ -28,10 +21,6 @@ jobs:
         with:
           node-version: '18'
       - run: npm install
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
       - name: Deploy from the push event
         run: npx lerna run deploy --since=${{ github.event.before }}
         if: github.event_name == 'push'
